@@ -24,11 +24,12 @@ DROP_COLUMNS:
 
 # for data transformation
 
-ONEHOT_ENCODING:
+LABL_ENCODING:
  - gender
  - veh_body
+ 
 
-ORDINAL-ENCODING:
+ORDINAL_ENCODING:
  - veh_age
  - area
  - agecat

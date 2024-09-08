@@ -19,3 +19,8 @@ agecat         int64
 X_OBSTAT_     object
 dtype: object]
 [2024-09-08 20:28:31,035: INFO: 2461142721: Ingestion of the data is completed]
+[2024-09-08 20:42:26,262: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-09-08 20:42:26,264: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-09-08 20:42:26,271: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-09-08 20:42:26,274: INFO: common: created directory at: artifacts]
+[2024-09-08 20:42:26,276: INFO: common: created directory at: artifacts/data_validation]
