@@ -18,7 +18,6 @@ list_of_files = [
     f"src/{project_name}/components/data_validation.py",
     f"src/{project_name}/components/evaluation.py",
     f"src/{project_name}/components/evaluation.py",
-    f"src/{project_name}/utils/training.py",
     f"src/{project_name}/utils/common.py.py",
     f"src/{project_name}/config/__init__.py",
     f"src/{project_name}/config/configuration.py",

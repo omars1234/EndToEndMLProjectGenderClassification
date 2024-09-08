@@ -1,10 +1,6 @@
 README.md
 setup.py
 src/EndToEndMLProjectGenderClassification/__init__.py
-src/EndToEndMLProjectGenderClassification.egg-info/PKG-INFO
-src/EndToEndMLProjectGenderClassification.egg-info/SOURCES.txt
-src/EndToEndMLProjectGenderClassification.egg-info/dependency_links.txt
-src/EndToEndMLProjectGenderClassification.egg-info/top_level.txt
 src/EndToEndMLProjectGenderClassification/components/__init__.py
 src/EndToEndMLProjectGenderClassification/components/data_ingestion.py
 src/EndToEndMLProjectGenderClassification/components/data_transformation.py
@@ -22,3 +18,7 @@ src/EndToEndMLProjectGenderClassification/pipeline/stage_02_data_validation.py.p
 src/EndToEndMLProjectGenderClassification/pipeline/stage_03_data_transformation.py.py
 src/EndToEndMLProjectGenderClassification/pipeline/stage_04_training.py.py
 src/EndToEndMLProjectGenderClassification/pipeline/stage_05_evaluation.py.py
+src/GenderClassification.egg-info/PKG-INFO
+src/GenderClassification.egg-info/SOURCES.txt
+src/GenderClassification.egg-info/dependency_links.txt
+src/GenderClassification.egg-info/top_level.txt
