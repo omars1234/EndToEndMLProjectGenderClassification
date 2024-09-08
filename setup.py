@@ -8,7 +8,7 @@ __version__ = "0.0.0"
 
 REPO_NAME = "EndToEndMLProjectGenderClassification"
 AUTHOR_USER_NAME = "omars1234"
-SRC_REPO = "GenderClassification"
+SRC_REPO = "EndToEndMLProjectGenderClassification"
 AUTHOR_EMAIL = "omars.soub@gmail.com"
 
 
