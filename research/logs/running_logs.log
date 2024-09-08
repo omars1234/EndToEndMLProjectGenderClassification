@@ -1,0 +1,6 @@
+[2024-09-08 20:39:55,703: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-09-08 20:39:55,706: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-09-08 20:39:55,713: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-09-08 20:39:55,715: INFO: common: created directory at: artifacts]
+[2024-09-08 20:39:55,717: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-08 20:39:55,718: INFO: 2461142721: Ingestion of the data is completed]

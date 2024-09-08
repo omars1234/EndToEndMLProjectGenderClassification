@@ -1,0 +1,36 @@
+
+
+COLUMNS:
+ veh_value  : float64
+ exposure   : float64
+ clm        : int64
+ numclaims  : int64
+ claimcst0  : float64
+ veh_body   : object
+ veh_age    : object #int64
+ gender     : object
+ area       : object
+ agecat     : object #int64
+ X_OBSTAT_  : object
+ 
+
+TARGET_COLUMN:
+ name: gender
+
+DROP_COLUMNS:
+ - X_OBSTAT_
+ - clm
+ - numclaims
+
+# for data transformation
+
+ONEHOT_ENCODING:
+ - gender
+ - veh_body
+
+ORDINAL-ENCODING:
+ - veh_age
+ - area
+ - agecat
+  
+ 

@@ -1,1 +1,21 @@
 [2024-09-08 20:08:18,510: INFO: main: welcome to my 1st log]
+[2024-09-08 20:26:57,485: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-09-08 20:26:57,496: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-09-08 20:26:57,497: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-09-08 20:28:30,671: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-09-08 20:28:30,674: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-09-08 20:28:30,675: INFO: common: created directory at: artifacts]
+[2024-09-08 20:28:30,677: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-08 20:28:31,033: INFO: 2461142721: veh_value    float64
+exposure     float64
+clm            int64
+numclaims      int64
+claimcst0    float64
+veh_body      object
+veh_age        int64
+gender        object
+area          object
+agecat         int64
+X_OBSTAT_     object
+dtype: object]
+[2024-09-08 20:28:31,035: INFO: 2461142721: Ingestion of the data is completed]
