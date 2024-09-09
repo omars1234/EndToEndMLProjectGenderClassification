@@ -21,5 +21,6 @@ flasgger==0.9.7.1
 logging
 pyjanitor
 neuro-mf
+imblearn
 
 -e .

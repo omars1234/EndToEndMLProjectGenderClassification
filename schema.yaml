@@ -15,7 +15,7 @@ COLUMNS:
  
 
 TARGET_COLUMN:
- name: gender
+ - gender
 
 DROP_COLUMNS:
  - X_OBSTAT_
@@ -33,5 +33,14 @@ ORDINAL_ENCODING:
  - veh_age
  - area
  - agecat
+
+
+TRANSFORM_FEATURES:
+ - veh_value
+
+NUMERICAL_FEATURES:
+ - veh_value
+ - exposure
+ - claimcst0
   
  

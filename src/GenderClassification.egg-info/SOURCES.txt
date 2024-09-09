@@ -18,6 +18,8 @@ src/EndToEndMLProjectGenderClassification/pipeline/stage_02_data_validation.py.p
 src/EndToEndMLProjectGenderClassification/pipeline/stage_03_data_transformation.py.py
 src/EndToEndMLProjectGenderClassification/pipeline/stage_04_training.py.py
 src/EndToEndMLProjectGenderClassification/pipeline/stage_05_evaluation.py.py
+src/EndToEndMLProjectGenderClassification/utils/__init__.py
+src/EndToEndMLProjectGenderClassification/utils/common.py
 src/GenderClassification.egg-info/PKG-INFO
 src/GenderClassification.egg-info/SOURCES.txt
 src/GenderClassification.egg-info/dependency_links.txt
