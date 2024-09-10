@@ -30,9 +30,7 @@ LABL_ENCODING:
  
 
 ORDINAL_ENCODING:
- - veh_age
  - area
- - agecat
 
 
 TRANSFORM_FEATURES:

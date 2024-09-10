@@ -1,5 +1,5 @@
 GradientBoostingClassifier:
-  n_estimators : 200
+  n_estimators : 150
   min_samples_split : 4
   min_samples_leaf : 2
   random_state: 42

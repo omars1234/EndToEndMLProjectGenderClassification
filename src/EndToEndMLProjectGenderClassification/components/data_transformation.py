@@ -14,9 +14,6 @@ import janitor
 from imblearn.combine import SMOTETomek,SMOTEENN
 from EndToEndMLProjectGenderClassification.config.configuration import DataTransfornmationConfig
 
-
-
-
 class DataTransfornmation:
     def __init__(self,config:DataTransfornmationConfig):
         self.config= config
@@ -78,14 +75,21 @@ class DataTransfornmation:
 
         logger.info("got train_set,test_set from data_dropping()   ==> Done")
 
+        train_set[self.config.trans_cols]=PowerTransformer(method="yeo-johnson").fit_transform(train_set[self.config.trans_cols])
+        test_set[self.config.trans_cols]=PowerTransformer(method="yeo-johnson").fit_transform(test_set[self.config.trans_cols])
+
+        logger.info("Apply PowerTransformer() to non normal data   ==> Done")
    
         input_train_set,target_train_set=train_set.drop(self.config.target_cols,axis=1),train_set[self.config.target_cols]
         input_test_set,target_test_set=test_set.drop(self.config.target_cols,axis=1),test_set[self.config.target_cols]
 
         logger.info("define x,y for train and test subsets  ==> Done")
 
-        input_train_set_arry=preprocessor.fit_transform(input_train_set)
-        input_test_set_arry=preprocessor.transform(input_test_set)
+        input_train_set_arry=input_train_set
+        input_test_set_arry=input_test_set
+
+        input_train_set_arry=input_train_set
+        input_test_set_arry=input_test_set
 
         logger.info("Apply preprocessor.fit_transform on input train and transform on input test ==> Done")     
 
@@ -110,5 +114,30 @@ class DataTransfornmation:
         logger.info("saving train_arr and test_arr  ==> Done")    
 
         logger.info("Data Splitting is completed")   
-    
 
+              
+
+        print("=========================")
+
+        logger.info(input_train_set.shape) 
+        logger.info(target_train_set.shape) 
+        logger.info(input_test_set.shape) 
+        logger.info(target_test_set.shape)
+
+        print("=========================")
+
+        logger.info(input_train_set_arry.shape) 
+        logger.info(input_test_set_arry.shape) 
+
+        print("=========================")
+
+        logger.info(input_train_set_final.shape) 
+        logger.info(target_train_set_final.shape) 
+        logger.info(input_test_set_final.shape) 
+        logger.info(target_test_set_final.shape)
+
+        print("=========================")
+
+        logger.info(train_arr.shape) 
+        logger.info(test_arr.shape)   
+    

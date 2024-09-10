@@ -1,6 +1,6 @@
 # *End ToEnd ML Project Gender Classification*
 
-### *👩‍💻 I'm currently still working on...*
+
 
 ## *Author  [Omar Soub](https://github.com/omars1234)*
 
