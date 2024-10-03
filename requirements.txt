@@ -1,4 +1,5 @@
 pandas 
+PyYAML==5.3.1
 dvc
 notebook
 numpy
@@ -6,7 +7,6 @@ matplotlib
 seaborn
 pypickle
 python-box==6.0.2
-pyYAML
 tqdm
 ensure==1.0.2
 joblib
@@ -22,5 +22,8 @@ logging
 pyjanitor
 neuro-mf
 imblearn
+docker
+docker-compose
+
 
 -e .

@@ -1,7 +1,6 @@
 # *End ToEnd ML Project Gender Classification*
 
 
-
 ## *Author  [Omar Soub](https://github.com/omars1234)*
 
 ## *Overview*
