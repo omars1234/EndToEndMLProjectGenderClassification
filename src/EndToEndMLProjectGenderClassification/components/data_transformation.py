@@ -21,6 +21,7 @@ class DataTransfornmation:
     def data_dropping(self):
         df=pd.read_csv(self.config.data_path)
         df=df.drop(self.config.drop_cols,axis=1)
+        df=df[df["veh_value"]>0]
         df=df.sort_values(by=self.config.ordinal_cols).reset_index().drop("index",axis=1)
 
         for col in df.select_dtypes(include="object"):
