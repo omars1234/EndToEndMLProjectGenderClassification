@@ -23,7 +23,7 @@ class Training:
             train_data[:,:-1],train_data[:,-1]
         )
 
-        model=GradientBoostingClassifier(
+        model=RandomForestClassifier(
             n_estimators= self.config.n_estimators,
             min_samples_split=self.config.min_samples_split,
             min_samples_leaf=self.config.min_samples_leaf,

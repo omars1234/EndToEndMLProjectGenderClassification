@@ -73,7 +73,7 @@ class ConfigurationManager:
 
     def get_training_config(self)-> TrainingConfig:
         config=self.config.training
-        params=self.params.GradientBoostingClassifier
+        params=self.params.RandomForestClassifier
         schema=self.schema
       
 
@@ -96,7 +96,7 @@ class ConfigurationManager:
 
     def get_model_evaluation_config(self)-> ModelEvaluationConfig:
         config=self.config.model_evaluation
-        params=self.params.GradientBoostingClassifier
+        params=self.params.RandomForestClassifier
         schema=self.schema
 
         create_directories([config.root_dir])

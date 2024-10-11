@@ -13,9 +13,8 @@ class DataTransfornmationPipeline:
         config = ConfigurationManager()
         data_transformation_config = config.get_data_transformation_config()
         data_transformation = DataTransfornmation(config=data_transformation_config)
-        data_transformation.data_dropping()
-        data_transformation.data_encoding()
-        data_transformation.train_test_splitting()
+        data_transformation.data_preperation()
+        data_transformation.train_test_transformation()
 
 
 if __name__ == '__main__':

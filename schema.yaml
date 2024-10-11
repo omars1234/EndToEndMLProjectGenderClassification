@@ -35,6 +35,7 @@ ORDINAL_ENCODING:
 
 TRANSFORM_FEATURES:
  - veh_value
+ - claimcst0
 
 NUMERICAL_FEATURES:
  - veh_value
