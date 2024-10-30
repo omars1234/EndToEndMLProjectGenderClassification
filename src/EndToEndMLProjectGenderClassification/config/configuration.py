@@ -73,22 +73,17 @@ class ConfigurationManager:
 
     def get_training_config(self)-> TrainingConfig:
         config=self.config.training
-        params=self.params.RandomForestClassifier
         schema=self.schema
-      
 
         create_directories([config.root_dir])
 
         training_config = TrainingConfig(
             root_dir=config.root_dir,
             train_data_arr_path=config.train_data_arr_path,
-            model_name=config.model_name,
-            n_estimators=params.n_estimators,
-            min_samples_split=params.min_samples_split,
-            min_samples_leaf=params.min_samples_leaf,
-            random_state=params.random_state,
+            test_data_arr_path=config.test_data_arr_path,
+            best_model=config.best_model,
+            best_model_params=config.best_model_params,
             target_column=schema.TARGET_COLUMN
-
         )
 
         return training_config
@@ -96,7 +91,6 @@ class ConfigurationManager:
 
     def get_model_evaluation_config(self)-> ModelEvaluationConfig:
         config=self.config.model_evaluation
-        params=self.params.RandomForestClassifier
         schema=self.schema
 
         create_directories([config.root_dir])
@@ -105,8 +99,7 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             test_data_arr_path=config.test_data_arr_path,
             model_path=config.model_path,
-            metrics_file_name=config.metrics_file_name,
-            all_params=params,
+            best_model_metrics=config.best_model_metrics,
             target_column=schema.TARGET_COLUMN
 
         )

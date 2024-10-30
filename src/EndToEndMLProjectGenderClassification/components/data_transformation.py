@@ -13,6 +13,8 @@ from sklearn.preprocessing import OrdinalEncoder
 import janitor
 from imblearn.combine import SMOTETomek,SMOTEENN
 from EndToEndMLProjectGenderClassification.config.configuration import DataTransfornmationConfig
+from src.EndToEndMLProjectGenderClassification.utils.common import remove_outliers
+
 
 class DataTransfornmation:
     def __init__(self,config:DataTransfornmationConfig):
@@ -21,16 +23,15 @@ class DataTransfornmation:
     def data_preperation(self):
         df=pd.read_csv(self.config.data_path)
         df=df.drop(self.config.drop_cols,axis=1)
+        df["veh_value"]=df["veh_value"]*10000
         df=df[df["veh_value"]>0]
         logger.info("Dropping unneccesary cols and rows ==> Done") 
 
+        #df=remove_outliers(df=df,data=self.config.trans_cols) 
+        #logger.info("remove_outliers ==> Done")
+
         df=df.sort_values(by=self.config.ordinal_cols).reset_index().drop("index",axis=1)
         logger.info("sorting cols ==> Done") 
-
-        col_to_move = "gender"
-        if col_to_move in df.columns:
-            df = df[[col for col in df.columns if col != col_to_move] + [col_to_move]] 
-        logger.info("Moving the Target Feature to be the last column in the data set ==> Done")
 
         for col in df.select_dtypes(include="object"):
             df[col]=LabelEncoder().fit_transform(df[col])
@@ -44,7 +45,6 @@ class DataTransfornmation:
         return train_set,test_set         
 
       
-
     def train_test_transformation(self):      
         train_set,test_set=self.data_preperation()
         logger.info("got train_set,test_set from data_dropping()   ==> Done")
@@ -55,16 +55,12 @@ class DataTransfornmation:
    
         input_train_set,target_train_set=train_set.drop(self.config.target_cols,axis=1),train_set[self.config.target_cols]
         input_test_set,target_test_set=test_set.drop(self.config.target_cols,axis=1),test_set[self.config.target_cols]
-        logger.info("define x,y for train and test subsets  ==> Done")
-
-        input_train_set_arry=input_train_set
-        input_test_set_arry=input_test_set
-        logger.info("Apply StandardScaler().fit_transform on input train and transform on input test ==> Done")     
+        logger.info("define x,y for train and test subsets  ==> Done")           
 
         smt=SMOTEENN(random_state=42,sampling_strategy="minority")
         
-        input_train_set_final,target_train_set_final=smt.fit_resample(input_train_set_arry,target_train_set)
-        input_test_set_final,target_test_set_final=smt.fit_resample(input_test_set_arry,target_test_set)
+        input_train_set_final,target_train_set_final=smt.fit_resample(input_train_set,target_train_set)
+        input_test_set_final,target_test_set_final=smt.fit_resample(input_test_set,target_test_set)
 
         logger.info("Apply SMOTEENN resampleing with sampling_strategy : minority  ==> Done") 
 
@@ -94,10 +90,6 @@ class DataTransfornmation:
 
         print("=========================")
 
-        logger.info(input_train_set_arry.shape) 
-        logger.info(input_test_set_arry.shape) 
-
-        print("=========================")
 
         logger.info(input_train_set_final.shape) 
         logger.info(target_train_set_final.shape) 

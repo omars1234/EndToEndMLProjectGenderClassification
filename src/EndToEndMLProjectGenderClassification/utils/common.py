@@ -11,6 +11,10 @@ from typing import Any
 import base64
 import pickle
 import numpy as np
+import pandas as pd
+from scipy import stats
+from sklearn.preprocessing import LabelEncoder,StandardScaler,OneHotEncoder,OrdinalEncoder,PowerTransformer
+
 
 
 @ensure_annotations
@@ -128,4 +132,16 @@ def get_size(path: Path) -> str:
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
 
+
+
+
+
+def remove_outliers(df, columns):
+        for col in columns:
+            threshold = np.percentile(df[col], 95)
+            excesses = df[col][df[col] > threshold] - threshold
+            shape, loc, scale = stats.genpareto.fit(excesses)
+            extreme_value_threshold = stats.genpareto.ppf(0.99, shape, loc=loc, scale=scale) + threshold
+            outliers = df[col][df[col] > extreme_value_threshold]
+            df = df[~df[col].isin(outliers.values)]
 

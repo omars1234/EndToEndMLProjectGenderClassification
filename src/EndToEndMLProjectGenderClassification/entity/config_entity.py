@@ -34,11 +34,9 @@ class DataTransfornmationConfig:
 class TrainingConfig:
     root_dir:Path
     train_data_arr_path:Path
-    model_name:str 
-    n_estimators: int
-    min_samples_split: int
-    min_samples_leaf: int
-    random_state: int
+    test_data_arr_path: Path 
+    best_model:str 
+    best_model_params: Path
     target_column:str
 
 
@@ -47,9 +45,8 @@ class ModelEvaluationConfig:
     root_dir:Path
     test_data_arr_path:Path
     model_path:Path
-    metrics_file_name:Path 
+    best_model_metrics:Path 
     target_column:str
-    all_params:dict
     
 
     

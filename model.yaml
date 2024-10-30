@@ -1,0 +1,28 @@
+models:
+  RandomForestClassifier:
+    n_estimators: [90,100,110,150,200]
+    min_samples_split: [2, 4, 6]
+    min_samples_leaf: [0.8,1] 
+
+  GradientBoostingClassifier:
+    n_estimators: [90,100,110,150,200]
+    min_samples_split: [2, 4, 6]
+    min_samples_leaf: [0.8,1] 
+
+  XGBClassifier:
+    learning_rate: [0.001,0.1,1]
+    n_estimators: [90, 100, 110]
+    colsample_bytree: [0.5,0.8]
+    colsample_bynode: [0.5,0.8]
+
+  AdaBoostClassifier:
+    n_estimators: [45,50,55]
+    learning_rate: [0.0001,0.001,0.01] 
+
+  KNeighborsClassifier:
+    n_neighbors: [4,5,6]
+    algorithm : ['auto', 'ball_tree', 'kd_tree', 'brute']
+
+       
+
+     

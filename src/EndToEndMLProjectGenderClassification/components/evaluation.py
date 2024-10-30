@@ -30,12 +30,10 @@ class ModelEvaluation:
         x_test,y_test=(
             test_data[:,:-1],test_data[:,-1]
         )
-
         prediction=model.predict(x_test)
 
         (acc,preci,re_call,f1)=self.evaluation_metrics(y_test,prediction)
 
         scors={"accuracy":acc,"precision":preci,"recall":re_call,"f1score":f1}
 
-        save_json(path=Path(self.config.metrics_file_name),data=scors)
-
+        save_json(path=Path(self.config.best_model_metrics),data=scors)

@@ -1,0 +1,10 @@
+{
+    "best_model_name": "RandomForestClassifier",
+    "best_params": {
+        "best_params": {
+            "n_estimators": 90,
+            "min_samples_split": 4,
+            "min_samples_leaf": 1
+        }
+    }
+}
